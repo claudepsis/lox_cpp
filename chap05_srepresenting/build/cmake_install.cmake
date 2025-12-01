@@ -1,4 +1,4 @@
-# Install script for directory: /home/iaas/csdiy/lox_cpp/chap04_scanning
+# Install script for directory: /home/iaas/csdiy/lox_cpp/ch1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/iaas/csdiy/lox_cpp/chap04_scanning/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/iaas/csdiy/lox_cpp/ch1/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

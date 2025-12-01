@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/iaas/csdiy/lox_cpp/chap04_scanning/include
+CXX_INCLUDES = -I/home/iaas/csdiy/lox_cpp/ch1/include
 
 CXX_FLAGS = -g -O0 -std=gnu++17
 
