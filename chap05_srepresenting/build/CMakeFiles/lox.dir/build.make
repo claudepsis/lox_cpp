@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/ch1
+CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/ch1/build
+CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lox.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/lox.dir/flags.make
 CMakeFiles/lox.dir/Lox.cpp.o: CMakeFiles/lox.dir/flags.make
 CMakeFiles/lox.dir/Lox.cpp.o: ../Lox.cpp
 CMakeFiles/lox.dir/Lox.cpp.o: CMakeFiles/lox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lox.dir/Lox.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lox.dir/Lox.cpp.o -MF CMakeFiles/lox.dir/Lox.cpp.o.d -o CMakeFiles/lox.dir/Lox.cpp.o -c /home/iaas/csdiy/lox_cpp/ch1/Lox.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lox.dir/Lox.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lox.dir/Lox.cpp.o -MF CMakeFiles/lox.dir/Lox.cpp.o.d -o CMakeFiles/lox.dir/Lox.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp
 
 CMakeFiles/lox.dir/Lox.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lox.dir/Lox.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/ch1/Lox.cpp > CMakeFiles/lox.dir/Lox.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp > CMakeFiles/lox.dir/Lox.cpp.i
 
 CMakeFiles/lox.dir/Lox.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lox.dir/Lox.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/ch1/Lox.cpp -o CMakeFiles/lox.dir/Lox.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp -o CMakeFiles/lox.dir/Lox.cpp.s
 
 CMakeFiles/lox.dir/Scanner.cpp.o: CMakeFiles/lox.dir/flags.make
 CMakeFiles/lox.dir/Scanner.cpp.o: ../Scanner.cpp
 CMakeFiles/lox.dir/Scanner.cpp.o: CMakeFiles/lox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lox.dir/Scanner.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lox.dir/Scanner.cpp.o -MF CMakeFiles/lox.dir/Scanner.cpp.o.d -o CMakeFiles/lox.dir/Scanner.cpp.o -c /home/iaas/csdiy/lox_cpp/ch1/Scanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lox.dir/Scanner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lox.dir/Scanner.cpp.o -MF CMakeFiles/lox.dir/Scanner.cpp.o.d -o CMakeFiles/lox.dir/Scanner.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp
 
 CMakeFiles/lox.dir/Scanner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lox.dir/Scanner.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/ch1/Scanner.cpp > CMakeFiles/lox.dir/Scanner.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp > CMakeFiles/lox.dir/Scanner.cpp.i
 
 CMakeFiles/lox.dir/Scanner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lox.dir/Scanner.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/ch1/Scanner.cpp -o CMakeFiles/lox.dir/Scanner.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp -o CMakeFiles/lox.dir/Scanner.cpp.s
 
 CMakeFiles/lox.dir/Token.cpp.o: CMakeFiles/lox.dir/flags.make
 CMakeFiles/lox.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/lox.dir/Token.cpp.o: CMakeFiles/lox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lox.dir/Token.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lox.dir/Token.cpp.o -MF CMakeFiles/lox.dir/Token.cpp.o.d -o CMakeFiles/lox.dir/Token.cpp.o -c /home/iaas/csdiy/lox_cpp/ch1/Token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lox.dir/Token.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lox.dir/Token.cpp.o -MF CMakeFiles/lox.dir/Token.cpp.o.d -o CMakeFiles/lox.dir/Token.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp
 
 CMakeFiles/lox.dir/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lox.dir/Token.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/ch1/Token.cpp > CMakeFiles/lox.dir/Token.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp > CMakeFiles/lox.dir/Token.cpp.i
 
 CMakeFiles/lox.dir/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lox.dir/Token.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/ch1/Token.cpp -o CMakeFiles/lox.dir/Token.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp -o CMakeFiles/lox.dir/Token.cpp.s
 
 # Object files for target lox
 lox_OBJECTS = \
@@ -125,7 +125,7 @@ lox: CMakeFiles/lox.dir/Scanner.cpp.o
 lox: CMakeFiles/lox.dir/Token.cpp.o
 lox: CMakeFiles/lox.dir/build.make
 lox: CMakeFiles/lox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable lox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable lox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -137,6 +137,6 @@ CMakeFiles/lox.dir/clean:
 .PHONY : CMakeFiles/lox.dir/clean
 
 CMakeFiles/lox.dir/depend:
-	cd /home/iaas/csdiy/lox_cpp/ch1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/iaas/csdiy/lox_cpp/ch1 /home/iaas/csdiy/lox_cpp/ch1 /home/iaas/csdiy/lox_cpp/ch1/build /home/iaas/csdiy/lox_cpp/ch1/build /home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles/lox.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/iaas/csdiy/lox_cpp/chap05_srepresenting /home/iaas/csdiy/lox_cpp/chap05_srepresenting /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles/lox.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lox.dir/depend
 

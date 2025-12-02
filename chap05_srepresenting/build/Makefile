@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/ch1
+CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/ch1/build
+CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles /home/iaas/csdiy/lox_cpp/ch1/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,19 @@ lox: cmake_check_build_system
 lox/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/build
 .PHONY : lox/fast
+
+#=============================================================================
+# Target rules for targets named genrate_ast
+
+# Build rule for target.
+genrate_ast: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 genrate_ast
+.PHONY : genrate_ast
+
+# fast build rule for target.
+genrate_ast/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/build
+.PHONY : genrate_ast/fast
 
 Lox.o: Lox.cpp.o
 .PHONY : Lox.o
@@ -201,6 +214,30 @@ Token.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Token.cpp.s
 .PHONY : Token.cpp.s
 
+tool/GenerateAst.o: tool/GenerateAst.cpp.o
+.PHONY : tool/GenerateAst.o
+
+# target to build an object file
+tool/GenerateAst.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o
+.PHONY : tool/GenerateAst.cpp.o
+
+tool/GenerateAst.i: tool/GenerateAst.cpp.i
+.PHONY : tool/GenerateAst.i
+
+# target to preprocess a source file
+tool/GenerateAst.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.i
+.PHONY : tool/GenerateAst.cpp.i
+
+tool/GenerateAst.s: tool/GenerateAst.cpp.s
+.PHONY : tool/GenerateAst.s
+
+# target to generate assembly for a file
+tool/GenerateAst.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.s
+.PHONY : tool/GenerateAst.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -209,6 +246,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... genrate_ast"
 	@echo "... lox"
 	@echo "... Lox.o"
 	@echo "... Lox.i"
@@ -219,6 +257,9 @@ help:
 	@echo "... Token.o"
 	@echo "... Token.i"
 	@echo "... Token.s"
+	@echo "... tool/GenerateAst.o"
+	@echo "... tool/GenerateAst.i"
+	@echo "... tool/GenerateAst.s"
 .PHONY : help
 
 

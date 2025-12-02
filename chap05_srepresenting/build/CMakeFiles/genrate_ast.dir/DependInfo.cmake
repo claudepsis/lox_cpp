@@ -8,9 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp" "CMakeFiles/lox.dir/Lox.cpp.o" "gcc" "CMakeFiles/lox.dir/Lox.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp" "CMakeFiles/lox.dir/Scanner.cpp.o" "gcc" "CMakeFiles/lox.dir/Scanner.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp" "CMakeFiles/lox.dir/Token.cpp.o" "gcc" "CMakeFiles/lox.dir/Token.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/tool/GenerateAst.cpp" "CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o" "gcc" "CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o.d"
   )
 
 # Targets to which this target links.

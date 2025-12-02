@@ -15,3 +15,7 @@ add_executable(lox
     Scanner.cpp
     Token.cpp
 )
+
+add_executable(genrate_ast
+    tool/GenerateAst.cpp
+)

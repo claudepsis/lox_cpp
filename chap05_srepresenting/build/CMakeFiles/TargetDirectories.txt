@@ -1,3 +1,4 @@
-/home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles/lox.dir
-/home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles/edit_cache.dir
-/home/iaas/csdiy/lox_cpp/ch1/build/CMakeFiles/rebuild_cache.dir
+/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles/lox.dir
+/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles/genrate_ast.dir
+/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles/edit_cache.dir
+/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles/rebuild_cache.dir
