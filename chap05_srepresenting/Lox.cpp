@@ -44,16 +44,16 @@ void Lox::report(int line,const std::string& where,const std::string& message){
     hadError=true;
 }
 
-int main(int argc,char *argv[]){
-    if(argc>2){
-        std::cout<<"Usage:lox [script]";
-        exit(64);
-    }
-    else if(argc==2){
-        Lox::runFile(std::string(argv[1]));
-    }
-    else {
-        Lox::runPrompt();
-    }
-}
+// int main(int argc,char *argv[]){
+//     if(argc>2){
+//         std::cout<<"Usage:lox [script]";
+//         exit(64);
+//     }
+//     else if(argc==2){
+//         Lox::runFile(std::string(argv[1]));
+//     }
+//     else {
+//         Lox::runPrompt();
+//     }
+// }
 

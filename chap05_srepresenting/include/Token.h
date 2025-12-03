@@ -8,11 +8,11 @@
 #include <cmath>
 class Token
 {
+public:
     const TokenType type;
     const std::string lexeme;
     const std::any literal;
     const int line;
-public:
     Token(TokenType type, std::string lexeme, std::any literal, int line) : type(type), lexeme(lexeme), literal(literal), line(line) {};
     std::string toString();
 };

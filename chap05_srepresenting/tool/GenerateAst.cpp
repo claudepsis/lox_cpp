@@ -1,13 +1,7 @@
-#include <list>
-#include <vector>
+#include "GenerateAst.h"
 #include <iostream>
-#include <cstdlib>
-#include <string>
-#include <fstream>
-#include <algorithm>
-#include <sstream>
 using namespace std;
-
+typedef any Object;
 
 std::string ltrim(const std::string& str) {
     size_t start = str.find_first_not_of(" \t\n\r\f\v");
@@ -25,6 +19,19 @@ std::string trim(const std::string& str) {
     return rtrim(ltrim(str));
 }
 
+std::string toUpper(std::string str) {
+    std::transform(str.begin(), str.end(), str.begin(),
+                   [](unsigned char c) { return std::toupper(c); });
+    return str;
+}
+
+// 转换为小写
+std::string toLower(std::string str) {
+    std::transform(str.begin(), str.end(), str.begin(),
+                   [](unsigned char c) { return std::tolower(c); });
+    return str;
+}
+
 std::vector<std::string> split(const std::string& str, char delimiter) {
     std::vector<std::string> tokens;
     stringstream ss(str);
@@ -35,8 +42,77 @@ std::vector<std::string> split(const std::string& str, char delimiter) {
     return tokens;
 }
 
+string convertVirtual(const string &name){
+    if(name=="Expr") return "std::unique_ptr<"+name+">"; 
+    return name;
+}
 
-static void defineAst(const string& outputDir,const string& baseName,const vector<string>&types){
+
+static void defineType(ofstream& writer, 
+                       const string& baseName,
+                       const string& className, 
+                       const string& fieldList) {
+    writer << "class " << className << " : public " << baseName << " {\n";
+    writer << "public:\n";
+    
+    // 解析字段
+    vector<pair<string, string>> fields = parseFields(fieldList);
+    
+    // 成员变量声明
+    for (const auto& [type, name] : fields) {  // C++17 结构化绑定
+        writer << "    " << type << " " << name << ";\n";
+    }
+    writer << "\n";
+    
+    // 构造函数参数
+    writer << "    " << className << "(";
+    writer << join(fields, ", ", [](const auto& field) {
+        return field.first + " " + field.second;
+    });
+    writer << ")\n";
+    
+    // 初始化列表
+    writer << "        : ";
+    writer << join(fields, ", ", [](const auto& field) {
+        return field.second + "(std::move(" + field.second + "))";
+    });
+    writer << " {}\n";
+    //init accept
+    writer<<"\tstd::any accept(Visitor& visitor){"<<std::endl;
+    writer<<"\t\treturn visitor.visit"<<className<<baseName<<"(*this);"<<endl;
+    writer<<"\t}"<<endl;
+    writer << "};\n\n";
+}
+
+// 辅助函数：解析字段列表
+vector<pair<string, string>> parseFields(const string& fieldList) {
+    vector<pair<string, string>> result;
+    auto fields = split(fieldList, ',');
+    
+    for (const auto& field : fields) {
+        auto parts = split(trim(field), ' ');
+        if (parts.size() >= 2) {
+            string type = convertVirtual(parts[0]);
+            string name = parts[1];
+            result.push_back({type, name});
+        }
+    }
+    
+    return result;
+}
+
+void defineVisitor(std::ofstream &writer,std::string baseName,std::vector<std::string>types){
+    writer<<"class Visitor{"<<endl;
+    writer<<"public:"<<endl;
+    writer<<"\t"<<"virtual ~Visitor()=default;"<<endl;
+    for(string type:types){
+        string typeName=trim(split(type,':')[0]);
+        writer<<"\tvirtual std::any visit"<<typeName<<baseName<<"("+typeName+"& "+toLower(baseName)+")=0;"<<endl;
+    }
+    writer<<"};\n"<<endl;
+}
+
+void defineAst(const string& outputDir,const string& baseName,const vector<string>&types){
     string path=outputDir+"/"+baseName+".h";
     ofstream writer(path);
     if(!writer.is_open()){
@@ -45,17 +121,29 @@ static void defineAst(const string& outputDir,const string& baseName,const vecto
     }
     writer<<"#ifndef "<<baseName<<"_H"<<endl;
     writer<<"#define "<<baseName<<"_H"<<endl;
-    
+    writer<<"#include<memory>"<<endl;
+    writer<<"#include<any>"<<endl;
+    writer<<"#include \"Token.h\""<<endl;
+    writer<<"typedef std::any Object;"<<endl;
+    for(const string& type:types){
+        string className=trim(split(type,':')[0]);
+        writer<<"class "<<className<<";"<<endl;  
+    }
+    defineVisitor(writer,baseName,types);
+
     writer<<"class Expr{"<<endl;
     writer<<"public:"<<endl;
     writer<<"\t"<<"virtual ~Expr()=default;"<<endl;
-    writer<<"};"<<endl;
-    writer<<"#endif"<<endl;
+    writer<<"\t"<<"virtual std::any accept(Visitor& visitor)=0;"<<endl;
+    writer<<"};\n"<<endl;
+    
     for(const string& type:types){
         vector<string> parts=split(type,':');
-        string className=trim(parts[0]);
-        writer<<"class "<<className<<" : public "<<baseName<<" {"<<endl;
+        string filedList=trim(parts[1]);;
+        defineType(writer,baseName,trim(parts[0]),filedList);  
     }
+    writer<<"#endif"<<endl;
+    writer.close();
 }
 
 int main(int argc,char*argv[]){
@@ -65,9 +153,9 @@ int main(int argc,char*argv[]){
     }
     std::string outputDir=argv[1];
     defineAst(outputDir, "Expr", vector<string>{
-      "Binary   : Expr left, Token operator, Expr right",
+      "Binary   : Expr left, Token op, Expr right",
       "Grouping : Expr expression",
       "Literal  : Object value",
-      "Unary    : Token operator, Expr right"
+      "Unary    : Token op, Expr right"
     }); 
 }

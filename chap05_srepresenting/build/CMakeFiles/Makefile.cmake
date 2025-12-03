@@ -45,4 +45,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/lox.dir/DependInfo.cmake"
   "CMakeFiles/genrate_ast.dir/DependInfo.cmake"
+  "CMakeFiles/astprinter.dir/DependInfo.cmake"
+  "CMakeFiles/rpnprinter.dir/DependInfo.cmake"
   )

@@ -8,7 +8,8 @@ set(CMAKE_BUILD_TYPE Debug)
 
 # 或者手动添加调试标志
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
-include_directories(include)
+include_directories(include
+)
 
 add_executable(lox
     Lox.cpp
@@ -18,4 +19,18 @@ add_executable(lox
 
 add_executable(genrate_ast
     tool/GenerateAst.cpp
+)
+
+add_executable(astprinter
+    Lox.cpp
+    Scanner.cpp
+    Token.cpp
+    AstPrinter.cpp
+)
+
+add_executable(rpnprinter
+    Lox.cpp
+    Scanner.cpp
+    Token.cpp
+    RPNPrinter.cpp
 )

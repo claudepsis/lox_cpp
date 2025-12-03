@@ -142,12 +142,64 @@ genrate_ast/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/build
 .PHONY : genrate_ast/fast
 
+#=============================================================================
+# Target rules for targets named astprinter
+
+# Build rule for target.
+astprinter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 astprinter
+.PHONY : astprinter
+
+# fast build rule for target.
+astprinter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/build
+.PHONY : astprinter/fast
+
+#=============================================================================
+# Target rules for targets named rpnprinter
+
+# Build rule for target.
+rpnprinter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpnprinter
+.PHONY : rpnprinter
+
+# fast build rule for target.
+rpnprinter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/build
+.PHONY : rpnprinter/fast
+
+AstPrinter.o: AstPrinter.cpp.o
+.PHONY : AstPrinter.o
+
+# target to build an object file
+AstPrinter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/AstPrinter.cpp.o
+.PHONY : AstPrinter.cpp.o
+
+AstPrinter.i: AstPrinter.cpp.i
+.PHONY : AstPrinter.i
+
+# target to preprocess a source file
+AstPrinter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/AstPrinter.cpp.i
+.PHONY : AstPrinter.cpp.i
+
+AstPrinter.s: AstPrinter.cpp.s
+.PHONY : AstPrinter.s
+
+# target to generate assembly for a file
+AstPrinter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/AstPrinter.cpp.s
+.PHONY : AstPrinter.cpp.s
+
 Lox.o: Lox.cpp.o
 .PHONY : Lox.o
 
 # target to build an object file
 Lox.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Lox.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Lox.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Lox.cpp.o
 .PHONY : Lox.cpp.o
 
 Lox.i: Lox.cpp.i
@@ -156,6 +208,8 @@ Lox.i: Lox.cpp.i
 # target to preprocess a source file
 Lox.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Lox.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Lox.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Lox.cpp.i
 .PHONY : Lox.cpp.i
 
 Lox.s: Lox.cpp.s
@@ -164,7 +218,33 @@ Lox.s: Lox.cpp.s
 # target to generate assembly for a file
 Lox.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Lox.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Lox.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Lox.cpp.s
 .PHONY : Lox.cpp.s
+
+RPNPrinter.o: RPNPrinter.cpp.o
+.PHONY : RPNPrinter.o
+
+# target to build an object file
+RPNPrinter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o
+.PHONY : RPNPrinter.cpp.o
+
+RPNPrinter.i: RPNPrinter.cpp.i
+.PHONY : RPNPrinter.i
+
+# target to preprocess a source file
+RPNPrinter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.i
+.PHONY : RPNPrinter.cpp.i
+
+RPNPrinter.s: RPNPrinter.cpp.s
+.PHONY : RPNPrinter.s
+
+# target to generate assembly for a file
+RPNPrinter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.s
+.PHONY : RPNPrinter.cpp.s
 
 Scanner.o: Scanner.cpp.o
 .PHONY : Scanner.o
@@ -172,6 +252,8 @@ Scanner.o: Scanner.cpp.o
 # target to build an object file
 Scanner.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Scanner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Scanner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Scanner.cpp.o
 .PHONY : Scanner.cpp.o
 
 Scanner.i: Scanner.cpp.i
@@ -180,6 +262,8 @@ Scanner.i: Scanner.cpp.i
 # target to preprocess a source file
 Scanner.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Scanner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Scanner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Scanner.cpp.i
 .PHONY : Scanner.cpp.i
 
 Scanner.s: Scanner.cpp.s
@@ -188,6 +272,8 @@ Scanner.s: Scanner.cpp.s
 # target to generate assembly for a file
 Scanner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Scanner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Scanner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Scanner.cpp.s
 .PHONY : Scanner.cpp.s
 
 Token.o: Token.cpp.o
@@ -196,6 +282,8 @@ Token.o: Token.cpp.o
 # target to build an object file
 Token.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Token.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Token.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Token.cpp.o
 .PHONY : Token.cpp.o
 
 Token.i: Token.cpp.i
@@ -204,6 +292,8 @@ Token.i: Token.cpp.i
 # target to preprocess a source file
 Token.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Token.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Token.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Token.cpp.i
 .PHONY : Token.cpp.i
 
 Token.s: Token.cpp.s
@@ -212,6 +302,8 @@ Token.s: Token.cpp.s
 # target to generate assembly for a file
 Token.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/Token.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/Token.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/Token.cpp.s
 .PHONY : Token.cpp.s
 
 tool/GenerateAst.o: tool/GenerateAst.cpp.o
@@ -246,11 +338,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... astprinter"
 	@echo "... genrate_ast"
 	@echo "... lox"
+	@echo "... rpnprinter"
+	@echo "... AstPrinter.o"
+	@echo "... AstPrinter.i"
+	@echo "... AstPrinter.s"
 	@echo "... Lox.o"
 	@echo "... Lox.i"
 	@echo "... Lox.s"
+	@echo "... RPNPrinter.o"
+	@echo "... RPNPrinter.i"
+	@echo "... RPNPrinter.s"
 	@echo "... Scanner.o"
 	@echo "... Scanner.i"
 	@echo "... Scanner.s"

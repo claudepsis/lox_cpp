@@ -65,6 +65,8 @@ CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build
 # The main recursive "all" target.
 all: CMakeFiles/lox.dir/all
 all: CMakeFiles/genrate_ast.dir/all
+all: CMakeFiles/astprinter.dir/all
+all: CMakeFiles/rpnprinter.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,6 +76,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/lox.dir/clean
 clean: CMakeFiles/genrate_ast.dir/clean
+clean: CMakeFiles/astprinter.dir/clean
+clean: CMakeFiles/rpnprinter.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -83,7 +87,7 @@ clean: CMakeFiles/genrate_ast.dir/clean
 CMakeFiles/lox.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=3,4,5,6 "Built target lox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=8,9,10,11 "Built target lox"
 .PHONY : CMakeFiles/lox.dir/all
 
 # Build rule for subdir invocation for target.
@@ -109,7 +113,7 @@ CMakeFiles/lox.dir/clean:
 CMakeFiles/genrate_ast.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=1,2 "Built target genrate_ast"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=6,7 "Built target genrate_ast"
 .PHONY : CMakeFiles/genrate_ast.dir/all
 
 # Build rule for subdir invocation for target.
@@ -127,6 +131,58 @@ genrate_ast: CMakeFiles/genrate_ast.dir/rule
 CMakeFiles/genrate_ast.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/genrate_ast.dir/build.make CMakeFiles/genrate_ast.dir/clean
 .PHONY : CMakeFiles/genrate_ast.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/astprinter.dir
+
+# All Build rule for target.
+CMakeFiles/astprinter.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target astprinter"
+.PHONY : CMakeFiles/astprinter.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/astprinter.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/astprinter.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles 0
+.PHONY : CMakeFiles/astprinter.dir/rule
+
+# Convenience name for target.
+astprinter: CMakeFiles/astprinter.dir/rule
+.PHONY : astprinter
+
+# clean rule for target.
+CMakeFiles/astprinter.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astprinter.dir/build.make CMakeFiles/astprinter.dir/clean
+.PHONY : CMakeFiles/astprinter.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/rpnprinter.dir
+
+# All Build rule for target.
+CMakeFiles/rpnprinter.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=12,13,14,15,16 "Built target rpnprinter"
+.PHONY : CMakeFiles/rpnprinter.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/rpnprinter.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rpnprinter.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles 0
+.PHONY : CMakeFiles/rpnprinter.dir/rule
+
+# Convenience name for target.
+rpnprinter: CMakeFiles/rpnprinter.dir/rule
+.PHONY : rpnprinter
+
+# clean rule for target.
+CMakeFiles/rpnprinter.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/clean
+.PHONY : CMakeFiles/rpnprinter.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
