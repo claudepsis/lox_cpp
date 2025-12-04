@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -O0 CMakeFiles/rpnprinter.dir/Lox.cpp.o CMakeFiles/rpnprinter.dir/Scanner.cpp.o CMakeFiles/rpnprinter.dir/Token.cpp.o CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o -o rpnprinter 
