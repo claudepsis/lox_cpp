@@ -8,6 +8,7 @@ class Binary;
 class Grouping;
 class Literal;
 class Unary;
+class Tenary;
 class Visitor{
 public:
 	virtual ~Visitor()=default;
@@ -15,6 +16,7 @@ public:
 	virtual std::any visitGroupingExpr(Grouping& expr)=0;
 	virtual std::any visitLiteralExpr(Literal& expr)=0;
 	virtual std::any visitUnaryExpr(Unary& expr)=0;
+	virtual std::any visitTenaryExpr(Tenary& expr)=0;
 };
 
 class Expr{
@@ -67,6 +69,19 @@ public:
         : op(std::move(op)), right(std::move(right)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitUnaryExpr(*this);
+	}
+};
+
+class Tenary : public Expr {
+public:
+    std::unique_ptr<Expr> condtion;
+    std::unique_ptr<Expr> thenBranch;
+    std::unique_ptr<Expr> elseBranch;
+
+    Tenary(std::unique_ptr<Expr> condtion, std::unique_ptr<Expr> thenBranch, std::unique_ptr<Expr> elseBranch)
+        : condtion(std::move(condtion)), thenBranch(std::move(thenBranch)), elseBranch(std::move(elseBranch)) {}
+	std::any accept(Visitor& visitor){
+		return visitor.visitTenaryExpr(*this);
 	}
 };
 

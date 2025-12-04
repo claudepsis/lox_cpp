@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting
+CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/chap06_parsing
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build
+CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/chap06_parsing/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rpnprinter.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/rpnprinter.dir/flags.make
 CMakeFiles/rpnprinter.dir/Lox.cpp.o: CMakeFiles/rpnprinter.dir/flags.make
 CMakeFiles/rpnprinter.dir/Lox.cpp.o: ../Lox.cpp
 CMakeFiles/rpnprinter.dir/Lox.cpp.o: CMakeFiles/rpnprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rpnprinter.dir/Lox.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/Lox.cpp.o -MF CMakeFiles/rpnprinter.dir/Lox.cpp.o.d -o CMakeFiles/rpnprinter.dir/Lox.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rpnprinter.dir/Lox.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/Lox.cpp.o -MF CMakeFiles/rpnprinter.dir/Lox.cpp.o.d -o CMakeFiles/rpnprinter.dir/Lox.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp
 
 CMakeFiles/rpnprinter.dir/Lox.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpnprinter.dir/Lox.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp > CMakeFiles/rpnprinter.dir/Lox.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp > CMakeFiles/rpnprinter.dir/Lox.cpp.i
 
 CMakeFiles/rpnprinter.dir/Lox.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpnprinter.dir/Lox.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp -o CMakeFiles/rpnprinter.dir/Lox.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp -o CMakeFiles/rpnprinter.dir/Lox.cpp.s
 
 CMakeFiles/rpnprinter.dir/Scanner.cpp.o: CMakeFiles/rpnprinter.dir/flags.make
 CMakeFiles/rpnprinter.dir/Scanner.cpp.o: ../Scanner.cpp
 CMakeFiles/rpnprinter.dir/Scanner.cpp.o: CMakeFiles/rpnprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rpnprinter.dir/Scanner.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/Scanner.cpp.o -MF CMakeFiles/rpnprinter.dir/Scanner.cpp.o.d -o CMakeFiles/rpnprinter.dir/Scanner.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rpnprinter.dir/Scanner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/Scanner.cpp.o -MF CMakeFiles/rpnprinter.dir/Scanner.cpp.o.d -o CMakeFiles/rpnprinter.dir/Scanner.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp
 
 CMakeFiles/rpnprinter.dir/Scanner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpnprinter.dir/Scanner.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp > CMakeFiles/rpnprinter.dir/Scanner.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp > CMakeFiles/rpnprinter.dir/Scanner.cpp.i
 
 CMakeFiles/rpnprinter.dir/Scanner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpnprinter.dir/Scanner.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp -o CMakeFiles/rpnprinter.dir/Scanner.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp -o CMakeFiles/rpnprinter.dir/Scanner.cpp.s
 
 CMakeFiles/rpnprinter.dir/Token.cpp.o: CMakeFiles/rpnprinter.dir/flags.make
 CMakeFiles/rpnprinter.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/rpnprinter.dir/Token.cpp.o: CMakeFiles/rpnprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rpnprinter.dir/Token.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/Token.cpp.o -MF CMakeFiles/rpnprinter.dir/Token.cpp.o.d -o CMakeFiles/rpnprinter.dir/Token.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rpnprinter.dir/Token.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/Token.cpp.o -MF CMakeFiles/rpnprinter.dir/Token.cpp.o.d -o CMakeFiles/rpnprinter.dir/Token.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp
 
 CMakeFiles/rpnprinter.dir/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpnprinter.dir/Token.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp > CMakeFiles/rpnprinter.dir/Token.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp > CMakeFiles/rpnprinter.dir/Token.cpp.i
 
 CMakeFiles/rpnprinter.dir/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpnprinter.dir/Token.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp -o CMakeFiles/rpnprinter.dir/Token.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp -o CMakeFiles/rpnprinter.dir/Token.cpp.s
 
 CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o: CMakeFiles/rpnprinter.dir/flags.make
 CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o: ../RPNPrinter.cpp
 CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o: CMakeFiles/rpnprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o -MF CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o.d -o CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/RPNPrinter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o -MF CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o.d -o CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/RPNPrinter.cpp
 
 CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/RPNPrinter.cpp > CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/RPNPrinter.cpp > CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.i
 
 CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/RPNPrinter.cpp -o CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/RPNPrinter.cpp -o CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.s
 
 # Object files for target rpnprinter
 rpnprinter_OBJECTS = \
@@ -141,7 +141,7 @@ rpnprinter: CMakeFiles/rpnprinter.dir/Token.cpp.o
 rpnprinter: CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o
 rpnprinter: CMakeFiles/rpnprinter.dir/build.make
 rpnprinter: CMakeFiles/rpnprinter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable rpnprinter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable rpnprinter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rpnprinter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/rpnprinter.dir/clean:
 .PHONY : CMakeFiles/rpnprinter.dir/clean
 
 CMakeFiles/rpnprinter.dir/depend:
-	cd /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/iaas/csdiy/lox_cpp/chap05_srepresenting /home/iaas/csdiy/lox_cpp/chap05_srepresenting /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles/rpnprinter.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/iaas/csdiy/lox_cpp/chap06_parsing/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/iaas/csdiy/lox_cpp/chap06_parsing /home/iaas/csdiy/lox_cpp/chap06_parsing /home/iaas/csdiy/lox_cpp/chap06_parsing/build /home/iaas/csdiy/lox_cpp/chap06_parsing/build /home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles/rpnprinter.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rpnprinter.dir/depend
 

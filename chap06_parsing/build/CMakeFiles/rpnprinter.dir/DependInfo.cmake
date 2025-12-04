@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp" "CMakeFiles/rpnprinter.dir/Lox.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/Lox.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/RPNPrinter.cpp" "CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp" "CMakeFiles/rpnprinter.dir/Scanner.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/Scanner.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp" "CMakeFiles/rpnprinter.dir/Token.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/Token.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp" "CMakeFiles/rpnprinter.dir/Lox.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/Lox.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/RPNPrinter.cpp" "CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/RPNPrinter.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp" "CMakeFiles/rpnprinter.dir/Scanner.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/Scanner.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp" "CMakeFiles/rpnprinter.dir/Token.cpp.o" "gcc" "CMakeFiles/rpnprinter.dir/Token.cpp.o.d"
   )
 
 # Targets to which this target links.

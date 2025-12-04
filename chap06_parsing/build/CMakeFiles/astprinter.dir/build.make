@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting
+CMAKE_SOURCE_DIR = /home/iaas/csdiy/lox_cpp/chap06_parsing
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build
+CMAKE_BINARY_DIR = /home/iaas/csdiy/lox_cpp/chap06_parsing/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/astprinter.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/astprinter.dir/flags.make
 CMakeFiles/astprinter.dir/Lox.cpp.o: CMakeFiles/astprinter.dir/flags.make
 CMakeFiles/astprinter.dir/Lox.cpp.o: ../Lox.cpp
 CMakeFiles/astprinter.dir/Lox.cpp.o: CMakeFiles/astprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/astprinter.dir/Lox.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/Lox.cpp.o -MF CMakeFiles/astprinter.dir/Lox.cpp.o.d -o CMakeFiles/astprinter.dir/Lox.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/astprinter.dir/Lox.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/Lox.cpp.o -MF CMakeFiles/astprinter.dir/Lox.cpp.o.d -o CMakeFiles/astprinter.dir/Lox.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp
 
 CMakeFiles/astprinter.dir/Lox.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astprinter.dir/Lox.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp > CMakeFiles/astprinter.dir/Lox.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp > CMakeFiles/astprinter.dir/Lox.cpp.i
 
 CMakeFiles/astprinter.dir/Lox.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astprinter.dir/Lox.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp -o CMakeFiles/astprinter.dir/Lox.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp -o CMakeFiles/astprinter.dir/Lox.cpp.s
 
 CMakeFiles/astprinter.dir/Scanner.cpp.o: CMakeFiles/astprinter.dir/flags.make
 CMakeFiles/astprinter.dir/Scanner.cpp.o: ../Scanner.cpp
 CMakeFiles/astprinter.dir/Scanner.cpp.o: CMakeFiles/astprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/astprinter.dir/Scanner.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/Scanner.cpp.o -MF CMakeFiles/astprinter.dir/Scanner.cpp.o.d -o CMakeFiles/astprinter.dir/Scanner.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/astprinter.dir/Scanner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/Scanner.cpp.o -MF CMakeFiles/astprinter.dir/Scanner.cpp.o.d -o CMakeFiles/astprinter.dir/Scanner.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp
 
 CMakeFiles/astprinter.dir/Scanner.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astprinter.dir/Scanner.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp > CMakeFiles/astprinter.dir/Scanner.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp > CMakeFiles/astprinter.dir/Scanner.cpp.i
 
 CMakeFiles/astprinter.dir/Scanner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astprinter.dir/Scanner.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp -o CMakeFiles/astprinter.dir/Scanner.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp -o CMakeFiles/astprinter.dir/Scanner.cpp.s
 
 CMakeFiles/astprinter.dir/Token.cpp.o: CMakeFiles/astprinter.dir/flags.make
 CMakeFiles/astprinter.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/astprinter.dir/Token.cpp.o: CMakeFiles/astprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/astprinter.dir/Token.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/Token.cpp.o -MF CMakeFiles/astprinter.dir/Token.cpp.o.d -o CMakeFiles/astprinter.dir/Token.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/astprinter.dir/Token.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/Token.cpp.o -MF CMakeFiles/astprinter.dir/Token.cpp.o.d -o CMakeFiles/astprinter.dir/Token.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp
 
 CMakeFiles/astprinter.dir/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astprinter.dir/Token.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp > CMakeFiles/astprinter.dir/Token.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp > CMakeFiles/astprinter.dir/Token.cpp.i
 
 CMakeFiles/astprinter.dir/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astprinter.dir/Token.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp -o CMakeFiles/astprinter.dir/Token.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp -o CMakeFiles/astprinter.dir/Token.cpp.s
 
 CMakeFiles/astprinter.dir/AstPrinter.cpp.o: CMakeFiles/astprinter.dir/flags.make
 CMakeFiles/astprinter.dir/AstPrinter.cpp.o: ../AstPrinter.cpp
 CMakeFiles/astprinter.dir/AstPrinter.cpp.o: CMakeFiles/astprinter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/astprinter.dir/AstPrinter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/AstPrinter.cpp.o -MF CMakeFiles/astprinter.dir/AstPrinter.cpp.o.d -o CMakeFiles/astprinter.dir/AstPrinter.cpp.o -c /home/iaas/csdiy/lox_cpp/chap05_srepresenting/AstPrinter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/astprinter.dir/AstPrinter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/astprinter.dir/AstPrinter.cpp.o -MF CMakeFiles/astprinter.dir/AstPrinter.cpp.o.d -o CMakeFiles/astprinter.dir/AstPrinter.cpp.o -c /home/iaas/csdiy/lox_cpp/chap06_parsing/AstPrinter.cpp
 
 CMakeFiles/astprinter.dir/AstPrinter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astprinter.dir/AstPrinter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap05_srepresenting/AstPrinter.cpp > CMakeFiles/astprinter.dir/AstPrinter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/iaas/csdiy/lox_cpp/chap06_parsing/AstPrinter.cpp > CMakeFiles/astprinter.dir/AstPrinter.cpp.i
 
 CMakeFiles/astprinter.dir/AstPrinter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astprinter.dir/AstPrinter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap05_srepresenting/AstPrinter.cpp -o CMakeFiles/astprinter.dir/AstPrinter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/iaas/csdiy/lox_cpp/chap06_parsing/AstPrinter.cpp -o CMakeFiles/astprinter.dir/AstPrinter.cpp.s
 
 # Object files for target astprinter
 astprinter_OBJECTS = \
@@ -141,7 +141,7 @@ astprinter: CMakeFiles/astprinter.dir/Token.cpp.o
 astprinter: CMakeFiles/astprinter.dir/AstPrinter.cpp.o
 astprinter: CMakeFiles/astprinter.dir/build.make
 astprinter: CMakeFiles/astprinter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable astprinter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable astprinter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/astprinter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/astprinter.dir/clean:
 .PHONY : CMakeFiles/astprinter.dir/clean
 
 CMakeFiles/astprinter.dir/depend:
-	cd /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/iaas/csdiy/lox_cpp/chap05_srepresenting /home/iaas/csdiy/lox_cpp/chap05_srepresenting /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build /home/iaas/csdiy/lox_cpp/chap05_srepresenting/build/CMakeFiles/astprinter.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/iaas/csdiy/lox_cpp/chap06_parsing/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/iaas/csdiy/lox_cpp/chap06_parsing /home/iaas/csdiy/lox_cpp/chap06_parsing /home/iaas/csdiy/lox_cpp/chap06_parsing/build /home/iaas/csdiy/lox_cpp/chap06_parsing/build /home/iaas/csdiy/lox_cpp/chap06_parsing/build/CMakeFiles/astprinter.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/astprinter.dir/depend
 

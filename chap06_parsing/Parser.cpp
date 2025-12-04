@@ -28,7 +28,30 @@ Token Parser::previous(){
 }
 
 std::unique_ptr<Expr> Parser::expression(){
-    return equality();
+    return comma();
+}
+
+
+
+std::unique_ptr<Expr> Parser::comma(){
+    unique_ptr<Expr> expr=tenary();
+    while(match(COMMA)){
+        Token op=previous();
+        unique_ptr<Expr> right=tenary();
+        expr=make_unique<Binary>(std::move(expr),op,move(right));
+    }
+    return expr;
+}
+
+std::unique_ptr<Expr> Parser::tenary(){
+    unique_ptr<Expr> expr=equality();
+    if(match(QUESTION)){
+        unique_ptr<Expr> thenBranch=expression();
+        consume(COLON,"expect : in tenary expression.");
+        unique_ptr<Expr> elseBranch=tenary();
+        expr=make_unique<Tenary>(std::move(expr),std::move(thenBranch),std::move(elseBranch)); 
+    }
+    return expr;
 }
 
 std::unique_ptr<Expr> Parser::equality(){

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/tool/GenerateAst.cpp" "CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o" "gcc" "CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/tool/GenerateAst.cpp" "CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o" "gcc" "CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o.d"
   )
 
 # Targets to which this target links.

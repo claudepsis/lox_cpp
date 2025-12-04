@@ -156,6 +156,7 @@ int main(int argc,char*argv[]){
       "Binary   : Expr left, Token op, Expr right",
       "Grouping : Expr expression",
       "Literal  : Object value",
-      "Unary    : Token op, Expr right"
+      "Unary    : Token op, Expr right",
+      "Tenary   : Expr condtion, Expr thenBranch, Expr elseBranch"
     }); 
 }

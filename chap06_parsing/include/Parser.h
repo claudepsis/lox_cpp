@@ -10,6 +10,8 @@ class Parser{
     std::vector<Token> tokens;
     
     std::unique_ptr<Expr> expression();
+    std::unique_ptr<Expr> comma();
+    std::unique_ptr<Expr> tenary();
     std::unique_ptr<Expr> equality();
     std::unique_ptr<Expr> comparison();
     std::unique_ptr<Expr> term();

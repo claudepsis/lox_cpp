@@ -14,6 +14,10 @@ std::any AstPrinter::visitGroupingExpr(Grouping& expr) {
     return parenthesize("group", *expr.expression);
 }
 
+std::any AstPrinter::visitTenaryExpr(Tenary& expr){
+    return parenthesize("tenary",*expr.condtion,*expr.thenBranch,*expr.elseBranch);
+}
+
 // ✅ 修复：处理多种类型
 std::any AstPrinter::visitLiteralExpr(Literal& expr) {
     if (!expr.value.has_value()) {

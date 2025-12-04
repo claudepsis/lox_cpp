@@ -9,6 +9,7 @@ class AstPrinter:Visitor{
 
     std::any visitLiteralExpr(Literal& expr);
     std::any visitUnaryExpr(Unary& expr);
+    std::any visitTenaryExpr(Tenary& expr);
     std::string stringify(const std::any& value);
     public:
     std::string print(Expr& expr);

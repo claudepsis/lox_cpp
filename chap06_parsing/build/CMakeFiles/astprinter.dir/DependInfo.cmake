@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/AstPrinter.cpp" "CMakeFiles/astprinter.dir/AstPrinter.cpp.o" "gcc" "CMakeFiles/astprinter.dir/AstPrinter.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Lox.cpp" "CMakeFiles/astprinter.dir/Lox.cpp.o" "gcc" "CMakeFiles/astprinter.dir/Lox.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Scanner.cpp" "CMakeFiles/astprinter.dir/Scanner.cpp.o" "gcc" "CMakeFiles/astprinter.dir/Scanner.cpp.o.d"
-  "/home/iaas/csdiy/lox_cpp/chap05_srepresenting/Token.cpp" "CMakeFiles/astprinter.dir/Token.cpp.o" "gcc" "CMakeFiles/astprinter.dir/Token.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/AstPrinter.cpp" "CMakeFiles/astprinter.dir/AstPrinter.cpp.o" "gcc" "CMakeFiles/astprinter.dir/AstPrinter.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/Lox.cpp" "CMakeFiles/astprinter.dir/Lox.cpp.o" "gcc" "CMakeFiles/astprinter.dir/Lox.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/Scanner.cpp" "CMakeFiles/astprinter.dir/Scanner.cpp.o" "gcc" "CMakeFiles/astprinter.dir/Scanner.cpp.o.d"
+  "/home/iaas/csdiy/lox_cpp/chap06_parsing/Token.cpp" "CMakeFiles/astprinter.dir/Token.cpp.o" "gcc" "CMakeFiles/astprinter.dir/Token.cpp.o.d"
   )
 
 # Targets to which this target links.
