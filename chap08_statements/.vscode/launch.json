@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug lox",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/iaas/csdiy/lox_cpp/chap08_statements/build/lox",
+            "args": [
+                // 在这里写运行 lox 时的命令行参数，比如脚本文件:
+                // "test.lox"
+            ],
+            "stopAtEntry": false,
+            "cwd": "/home/iaas/csdiy/lox_cpp/chap08_statements",
+            "environment": [],
+            "externalConsole": false,
+
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
