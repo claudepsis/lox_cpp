@@ -43,7 +43,7 @@ std::vector<std::string> split(const std::string& str, char delimiter) {
 }
 
 string convertVirtual(const string &name){
-    if(name=="Expr") return "std::unique_ptr<"+name+">"; 
+    if(name=="Expr"||name=="Stmt") return "std::unique_ptr<"+name+">"; 
     return name;
 }
 
@@ -66,9 +66,14 @@ static void defineType(ofstream& writer,
     
     // 构造函数参数
     writer << "    " << className << "(";
-    writer << join(fields, ", ", [](const auto& field) {
-        return field.first + " " + field.second;
-    });
+    for(size_t i=0;i<fields.size();i++){
+        const auto&[type,name](fields.at(i));
+        writer<<type<<" "<<name;
+        if(i!=fields.size()-1)writer<<",";
+    }
+    // writer << join(fields, ", ", [](const auto& field) {
+    //     return field.first + " " + field.second;
+    // });
     writer << ")\n";
     
     // 初始化列表
@@ -138,11 +143,32 @@ void defineAst(const string& outputDir,const string& baseName,const vector<strin
     
     for(const string& type:types){
         vector<string> parts=split(type,':');
-        string filedList=trim(parts[1]);;
+        string filedList=addStdPrefix(trim(parts[1]));
         defineType(writer,baseName,trim(parts[0]),filedList);  
     }
     writer<<"#endif"<<endl;
     writer.close();
+}
+
+
+std::string addStdPrefix(const std::string& fieldList) {
+    std::string result = fieldList;
+    
+    // 需要添加 std:: 前缀的标准库类型
+    std::vector<std::string> stdTypes = {
+        "vector", "string", "map", "set", "unordered_map", 
+        "unordered_set", "list", "deque", "array", "pair",
+        "shared_ptr", "unique_ptr", "weak_ptr", "any", "optional"
+    };
+    
+    for (const std::string& type : stdTypes) {
+        // 使用正则表达式，只替换独立的单词（避免替换已有 std:: 的）
+        // 匹配：单词边界 + 类型名 + 后面跟 < 或空格
+        std::regex pattern("\\b" + type + "(?=\\s*[<\\s])");
+        result = std::regex_replace(result, pattern, "std::" + type);
+    }
+    
+    return result;
 }
 
 int main(int argc,char*argv[]){
@@ -163,6 +189,7 @@ int main(int argc,char*argv[]){
     defineAst(outputDir,"Stmt",vector<string>{
         "Expression : Expr expression",
         "Print  : Expr expression",
-        "Var    :Token name,Expr initializer"
+        "Var    : Token name,Expr initializer",
+        "Block  : vector<shared_ptr<Stmt>> statements"
     });
 }

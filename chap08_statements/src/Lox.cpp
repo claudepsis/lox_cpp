@@ -19,7 +19,7 @@ void Lox::runFile(const std::string& path){
 
 void Lox::runtimeError(RuntimeError&error){
     std::cerr<<error.message<<"\n[line "<<error.token.line<<"]"<<std::endl;
-    hadRuntimeError==true;
+    hadRuntimeError=true;
 }
 
 void Lox::runPrompt(){
@@ -50,7 +50,7 @@ void Lox::error(Token token,const std::string&mesage){
     if(token.type==TokenType::EOF_TOKEN){
         report(token.line," at end ",mesage);
     }
-    else report(token.line," at ",mesage);
+    else report(token.line," at '"+token.lexeme+"'",mesage);
 }
 
 

@@ -34,7 +34,7 @@ public:
     Token name;
     std::unique_ptr<Expr> value;
 
-    Assign(Token name, std::unique_ptr<Expr> value)
+    Assign(Token name,std::unique_ptr<Expr> value)
         : name(std::move(name)), value(std::move(value)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitAssignExpr(*this);
@@ -47,7 +47,7 @@ public:
     Token op;
     std::unique_ptr<Expr> right;
 
-    Binary(std::unique_ptr<Expr> left, Token op, std::unique_ptr<Expr> right)
+    Binary(std::unique_ptr<Expr> left,Token op,std::unique_ptr<Expr> right)
         : left(std::move(left)), op(std::move(op)), right(std::move(right)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitBinaryExpr(*this);
@@ -81,7 +81,7 @@ public:
     Token op;
     std::unique_ptr<Expr> right;
 
-    Unary(Token op, std::unique_ptr<Expr> right)
+    Unary(Token op,std::unique_ptr<Expr> right)
         : op(std::move(op)), right(std::move(right)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitUnaryExpr(*this);
@@ -105,7 +105,7 @@ public:
     std::unique_ptr<Expr> thenBranch;
     std::unique_ptr<Expr> elseBranch;
 
-    Tenary(std::unique_ptr<Expr> condtion, std::unique_ptr<Expr> thenBranch, std::unique_ptr<Expr> elseBranch)
+    Tenary(std::unique_ptr<Expr> condtion,std::unique_ptr<Expr> thenBranch,std::unique_ptr<Expr> elseBranch)
         : condtion(std::move(condtion)), thenBranch(std::move(thenBranch)), elseBranch(std::move(elseBranch)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitTenaryExpr(*this);

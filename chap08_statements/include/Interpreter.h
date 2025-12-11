@@ -23,11 +23,12 @@ public:
     std::any visitExpressionStmt(Expression &stmt) override;
     std::any visitPrintStmt(Print &stmt) override;
     std::any visitVarStmt(Var &stmt) override;
+    std::any visitBlockStmt(Block& stmt) override;
     // 解释执行
     void interpret(std::vector<std::unique_ptr<Stmt>>& statements);
     
 private:
-    Environment environment=Environment();
+    std::shared_ptr<Environment> environment=std::make_shared<Environment>(Environment());
     void execute(Stmt& stmt);
     // 辅助方法
     std::any evaluate(std::unique_ptr<Expr> &expr);
@@ -37,6 +38,9 @@ private:
     void checkNumberOperand(Token &op, Object &operand);
     void checkNumberOperands(Token &op, Object &left, Object &right);
     std::string formatDouble(const double&num);
+
+    void executeBlock(const std::vector<std::shared_ptr<Stmt>>& statements,
+                     std::shared_ptr<Environment> blockEnvironment);
 };
 
 #endif // INTERPRETER_H

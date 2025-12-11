@@ -25,6 +25,7 @@ class Parser{
     std::unique_ptr<Stmt> exprStmt();
     std::unique_ptr<Stmt> delcaration();
     std::unique_ptr<Stmt> varDeclaration();
+    std::vector<std::shared_ptr<Stmt>> block();
     Token consume(TokenType type,const std::string& message);
     template<typename ...TokenTypes>
     bool match(TokenTypes ... types){

@@ -72,13 +72,13 @@ int main() {
     auto expression = std::make_unique<Binary>(
         std::make_unique<Binary>(
             std::make_unique<Literal>(1),
-            Token(TokenType::PLUS, "+", nullptr, 1),
+            Token(TokenType::PLUS, "+", std::any(), 1),
             std::make_unique<Literal>(2)
         ),
-        Token(TokenType::STAR, "*", nullptr, 1),
+        Token(TokenType::STAR, "*", std::any(), 1),
         std::make_unique<Binary>(
             std::make_unique<Literal>(4),
-            Token(TokenType::MINUS, "-", nullptr, 1),
+            Token(TokenType::MINUS, "-", std::any(), 1),
             std::make_unique<Literal>(3)
         )
     );

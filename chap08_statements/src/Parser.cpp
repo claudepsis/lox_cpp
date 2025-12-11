@@ -63,7 +63,7 @@ std::unique_ptr<Expr> Parser::assignment(){
         if(auto var=dynamic_cast<Variable*>(expr.get())){
             return make_unique<Assign>(var->name,std::move(value));
         }
-        Lox::error(equals,"Invaild assignment target!");
+        Lox::error(equals,"Invalid assignment target.");
     }
     return expr;
 }
@@ -151,17 +151,27 @@ Parser::ParseError Parser::error(Token token,const std::string message){
 
 std::unique_ptr<Stmt> Parser::statement(){
     if(match(PRINT)) return printStmt();
+    if(match(LEFT_BRACE)) return make_unique<Block>(block());
     else return exprStmt();
+}
+
+std::vector<std::shared_ptr<Stmt>> Parser::block(){
+    vector<shared_ptr<Stmt>> statements;
+    while(!check(RIGHT_BRACE)&&!isAtEnd()){
+        statements.push_back(delcaration());
+    }
+    consume(RIGHT_BRACE,"Expect ')' after block.");
+    return statements;
 }
 
 std::unique_ptr<Stmt> Parser::printStmt(){
     std::unique_ptr<Expr> value=expression();
     consume(SEMICOLON,"Expect ; after vaule");
-    return make_unique<Print>(Print(std::move(value)));
+    return make_unique<Print>(std::move(value));
 }
 
 std::unique_ptr<Stmt> Parser::varDeclaration(){
-    Token name=consume(IDENTIFIER,"Expect variable name");
+    Token name=consume(IDENTIFIER,"Expect variable name.");
     std::unique_ptr<Expr> initializer;
     if(match(EQUAL)){
         initializer=expression();
@@ -184,7 +194,7 @@ std::unique_ptr<Stmt> Parser::delcaration(){
 std::unique_ptr<Stmt> Parser::exprStmt(){
     std::unique_ptr<Expr> value=expression();
     consume(SEMICOLON,"Expect ; after vaule");
-    return make_unique<Expression>(Expression(std::move(value)));
+    return make_unique<Expression>(std::move(value));
 }
 
 std::vector<std::unique_ptr<Stmt>> Parser::parse(){
@@ -200,7 +210,7 @@ std::vector<std::unique_ptr<Stmt>> Parser::parse(){
 std::unique_ptr<Expr> Parser::primary(){
     if(match(FALSE)) return make_unique<Literal>(false);
     if(match(TRUE))  return make_unique<Literal>(true);
-    if(match(NIL))  return make_unique<Literal>(nullptr);
+    if(match(NIL))  return make_unique<Literal>(std::any());
     if(match(NUMBER,STRING)) return make_unique<Literal>(previous().literal);
     if(match(LEFT_PAREN)){
         std::unique_ptr<Expr> expr=expression();
@@ -210,5 +220,5 @@ std::unique_ptr<Expr> Parser::primary(){
     if(match(IDENTIFIER)){
         return make_unique<Variable>(previous());
     }
-    throw error(peek(),"Expect expression");
+    throw error(peek(),"Expect expression.");
 }

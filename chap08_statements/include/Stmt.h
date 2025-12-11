@@ -3,10 +3,12 @@
 #include<memory>
 #include<any>
 #include "Token.h"
+#include <vector>
 typedef std::any Object;
 class Expression;
 class Print;
 class Var;
+class Block;
 class Stmt{
 public:
 class Visitor{
@@ -15,6 +17,7 @@ public:
 	virtual std::any visitExpressionStmt(Expression& stmt)=0;
 	virtual std::any visitPrintStmt(Print& stmt)=0;
 	virtual std::any visitVarStmt(Var& stmt)=0;
+	virtual std::any visitBlockStmt(Block& stmt)=0;
 };
 
 	virtual ~Stmt()=default;
@@ -48,10 +51,21 @@ public:
     Token name;
     std::unique_ptr<Expr> initializer;
 
-    Var(Token name, std::unique_ptr<Expr> initializer)
+    Var(Token name,std::unique_ptr<Expr> initializer)
         : name(std::move(name)), initializer(std::move(initializer)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitVarStmt(*this);
+	}
+};
+
+class Block : public Stmt {
+public:
+    std::vector<std::shared_ptr<Stmt>> statements;
+
+    Block(std::vector<std::shared_ptr<Stmt>> statements)
+        : statements(std::move(statements)) {}
+	std::any accept(Visitor& visitor){
+		return visitor.visitBlockStmt(*this);
 	}
 };
 

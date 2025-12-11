@@ -9,6 +9,7 @@
 #include <sstream>
 #include <algorithm>
 #include <cctype>
+#include <regex>
 
 // 字符串处理函数
 std::string ltrim(const std::string& str);
@@ -19,7 +20,7 @@ std::string toUpper(std::string str);
 std::string toLower(std::string str) ;
 // 类型转换函数
 std::string convertVirtual(const std::string& name);
-
+std::string addStdPrefix(const std::string& fieldList);
 // 模板函数（需要在头文件中定义）
 template<typename T, typename Func>
 std::string join(const std::vector<T>& items, const std::string& separator, Func formatter) {

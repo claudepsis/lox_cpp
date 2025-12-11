@@ -12,27 +12,63 @@ std::any Interpreter::visitLiteralExpr(Literal &expr)
 std::any Interpreter::visitExpressionStmt(Expression &stmt)
 {
     evaluate(stmt.expression);
-    return nullptr;
+    return std::any();
 }
 
 //var stmt has no value
 std::any Interpreter::visitVarStmt(Var &stmt){
-    std::any value=nullptr;
+    std::any value;
     if(stmt.initializer!=nullptr){
         value=evaluate(stmt.initializer);
     }
-    environment.define(stmt.name.lexeme,value);
-    return nullptr;
+    environment->define(stmt.name.lexeme,value);
+    return std::any();
 }
+
+std::any Interpreter::visitBlockStmt(Block& stmt){
+    executeBlock(stmt.statements,std::make_shared<Environment>(Environment(environment)));
+    return std::any();
+}
+
+void Interpreter::executeBlock(const std::vector<std::shared_ptr<Stmt>>& statements,
+                     std::shared_ptr<Environment> blockEnvironment) {
+        // ✅ 保存当前环境
+        std::shared_ptr<Environment> previous = this->environment;
+        
+        // ✅ 使用 RAII 保证恢复
+        struct EnvironmentGuard {
+            Interpreter* interpreter;
+            std::shared_ptr<Environment> savedEnv;
+            
+            EnvironmentGuard(Interpreter* interp, std::shared_ptr<Environment> env)
+                : interpreter(interp), savedEnv(env) {}
+            
+            ~EnvironmentGuard() {
+                interpreter->environment = savedEnv;  // 自动恢复
+            }
+        };
+        
+        EnvironmentGuard guard(this, previous);
+        
+        // ✅ 切换到新环境
+        this->environment = blockEnvironment;
+        
+        // ✅ 执行语句（异常安全）
+        for (const auto& stmt : statements) {
+            execute(*stmt);
+        }
+        
+        // guard 析构时自动恢复环境
+    }
 
 std::any Interpreter::visitAssignExpr(Assign& expr){
     std::any value=evaluate(expr.value);
-    environment.assign(expr.name,value);
+    environment->assign(expr.name,value);
     return value;
 }
 
 std::any Interpreter::visitVariableExpr(Variable &expr){
-    return environment.get(expr.name);
+    return environment->get(expr.name);
 }
 
 
@@ -41,7 +77,7 @@ std::any Interpreter::visitPrintStmt(Print &stmt)
 {
     std::any value = evaluate(stmt.expression);
     std::cout << stringify(value) << std::endl;
-    return nullptr;
+    return std::any();
 }
 
 std::any Interpreter::visitGroupingExpr(Grouping &expr)
@@ -64,7 +100,7 @@ std::any Interpreter::visitUnaryExpr(Unary &expr)
         break;
     }
 
-    return nullptr;
+    return std::any();
 }
 
 //this can confirm 
@@ -104,7 +140,9 @@ std::any Interpreter::visitBinaryExpr(Binary &expr)
     {
         if (left.type() == typeid(double) && right.type() == typeid(double))
             return std::any_cast<double>(left) + std::any_cast<double>(right);
-        if (left.type() == typeid(std::string) || right.type() == typeid(std::string))
+        if ((left.type() == typeid(std::string)&&right.type() == typeid(double))\
+        ||(left.type() == typeid(double)&&right.type() == typeid(std::string))\
+        ||(left.type() == typeid(std::string)&&right.type() == typeid(std::string)))   
             return stringify(left) + stringify(right);
         throw RuntimeError(expr.op, "Operands must be two numbers or two strings.");
     }
@@ -135,7 +173,7 @@ std::any Interpreter::visitBinaryExpr(Binary &expr)
         break;
     }
 
-    return nullptr;
+    return std::any();
 }
 
 void Interpreter::interpret(std::vector<std::unique_ptr<Stmt>> &statements)
