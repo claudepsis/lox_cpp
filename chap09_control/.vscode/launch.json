@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug lox",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/iaas/csdiy/lox_cpp/chap09_control/build/lox",
+            "args": [
+                "/home/iaas/csdiy/craftinginterpreters/test/while/fun_in_body.lox"
+            ],
+            "stopAtEntry": false,
+            "cwd": "/home/iaas/csdiy/lox_cpp/chap09_control",
+            "environment": [],
+            "externalConsole": false,
+
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug genrate_ast",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/iaas/csdiy/lox_cpp/chap09_control/build/genrate_ast",
+            "args": [
+                "/home/iaas/csdiy/lox_cpp/chap09_control/include"
+            ],
+            "stopAtEntry": false,
+            "cwd": "/home/iaas/csdiy/lox_cpp/chap09_control",
+            "environment": [],
+            "externalConsole": false,
+
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

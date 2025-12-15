@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -O0 CMakeFiles/lox.dir/src/Lox.cpp.o CMakeFiles/lox.dir/src/Scanner.cpp.o CMakeFiles/lox.dir/src/Token.cpp.o CMakeFiles/lox.dir/src/AstPrinter.cpp.o CMakeFiles/lox.dir/src/Parser.cpp.o CMakeFiles/lox.dir/src/Interpreter.cpp.o CMakeFiles/lox.dir/src/Environment.cpp.o -o lox 
