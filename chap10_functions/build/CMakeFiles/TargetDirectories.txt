@@ -1,0 +1,6 @@
+/home/iaas/csdiy/lox_cpp/chap10_functions/build/CMakeFiles/lox.dir
+/home/iaas/csdiy/lox_cpp/chap10_functions/build/CMakeFiles/generate_ast.dir
+/home/iaas/csdiy/lox_cpp/chap10_functions/build/CMakeFiles/astprinter.dir
+/home/iaas/csdiy/lox_cpp/chap10_functions/build/CMakeFiles/rpnprinter.dir
+/home/iaas/csdiy/lox_cpp/chap10_functions/build/CMakeFiles/edit_cache.dir
+/home/iaas/csdiy/lox_cpp/chap10_functions/build/CMakeFiles/rebuild_cache.dir
