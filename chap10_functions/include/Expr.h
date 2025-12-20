@@ -62,9 +62,9 @@ class Call : public Expr {
 public:
     std::unique_ptr<Expr> callee;
     Token paren;
-    std::vector<std::shared_ptr<Expr>> arguments;
+    std::vector<std::unique_ptr<Expr>> arguments;
 
-    Call(std::unique_ptr<Expr> callee,Token paren,std::vector<std::shared_ptr<Expr>> arguments)
+    Call(std::unique_ptr<Expr> callee,Token paren,std::vector<std::unique_ptr<Expr>> arguments)
         : callee(std::move(callee)), paren(std::move(paren)), arguments(std::move(arguments)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitCallExpr(*this);

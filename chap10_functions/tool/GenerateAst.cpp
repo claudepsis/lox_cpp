@@ -180,7 +180,7 @@ int main(int argc,char*argv[]){
     defineAst(outputDir, "Expr", vector<string>{
         "Assign : Token name, Expr value",
       "Binary   : Expr left, Token op, Expr right",
-      "Call : Expr callee, Token paren, vector<shared_ptr<Expr>> arguments",
+      "Call : Expr callee, Token paren, vector<unique_ptr<Expr>> arguments",
       "Logical  : Expr left, Token op, Expr right",
       "Grouping : Expr expression",
       "Literal  : Object value",

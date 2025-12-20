@@ -21,6 +21,7 @@ public:
     std::any visitVariableExpr(Variable&expr) override;
     std::any visitAssignExpr(Assign &expr) override;
     std::any visitLogicalExpr(Logical &expr) override;
+    std::any visitCallExpr(Call& expr) override;
     std::any visitExpressionStmt(Expression &stmt) override;
     std::any visitPrintStmt(Print &stmt) override;
     std::any visitIfStmt(If &stmt);
@@ -29,9 +30,12 @@ public:
     std::any visitWhileStmt(While& stmt) override;
     // 解释执行
     void interpret(std::vector<std::unique_ptr<Stmt>>& statements);
+
+    Interpreter();
     
 private:
-    std::shared_ptr<Environment> environment=std::make_shared<Environment>(Environment());
+    std::shared_ptr<Environment> globals=std::make_shared<Environment>(Environment());
+    std::shared_ptr<Environment> environment=globals;
     void execute(Stmt& stmt);
     // 辅助方法
     std::any evaluate(std::unique_ptr<Expr> &expr);

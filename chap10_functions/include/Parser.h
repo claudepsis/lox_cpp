@@ -6,6 +6,7 @@
 #include "Expr.h"
 #include <memory>
 #include "Stmt.h"
+#define MAX_ARGNUM 255
 class Parser{
     int current=0;
     std::vector<Token> tokens;

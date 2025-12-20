@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include "LoxCallable.h"
 
 std::any Interpreter::visitLiteralExpr(Literal &expr)
 {
@@ -13,6 +14,31 @@ std::any Interpreter::visitExpressionStmt(Expression &stmt)
 {
     evaluate(stmt.expression);
     return std::any();
+}
+
+Interpreter::Interpreter(){
+    globals->define("clock",createClockFunction());
+}
+
+std::any Interpreter::visitCallExpr(Call& expr){
+    std::any callee=evaluate(expr.callee);
+    std::vector<std::any> arguments;
+    for(int i=0;i<expr.arguments.size();i++){
+        arguments.push_back(evaluate(expr.arguments[i]));
+    }
+    if(callee.type()!=typeid(std::shared_ptr<LoxCallable>)){
+        throw  RuntimeError(expr.paren,"Can only call functions and classes.");
+    }
+    std::shared_ptr<LoxCallable> function = std::any_cast<std::shared_ptr<LoxCallable>>(callee);
+    // 参数数量检查
+    if (arguments.size() != function->arity()) {
+        throw RuntimeError(expr.paren, 
+                          "Expected " + std::to_string(function->arity()) + 
+                          " arguments but got " + 
+                          std::to_string(arguments.size()) + ".");
+    }
+    return function->call(*this,arguments);
+
 }
 
 std::any Interpreter::visitLogicalExpr(Logical& expr){

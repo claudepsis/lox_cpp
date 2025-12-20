@@ -46,7 +46,7 @@ std::unique_ptr<Expr> Parser::call(){
     std::unique_ptr<Expr> expr=primary();
     while(true){
         if(match(LEFT_PAREN)){
-            expr=finishCall(expr);
+            expr=finishCall(*expr);
         }
         else break;
     }
@@ -54,11 +54,18 @@ std::unique_ptr<Expr> Parser::call(){
 }
 
 std::unique_ptr<Expr> Parser::finishCall(const Expr&callee){
-    std::vector<std::shared_ptr<Expr>> arguments;
-    while(!match(RIGHT_PAREN)){
-        std::shared_ptr<Expr> expr=make_shared<Expr>(expression());
-        arguments.push_back(expr);
+    std::vector<std::unique_ptr<Expr>> arguments;
+    if(!check(RIGHT_PAREN)){
+        do{
+            if(arguments.size()>MAX_ARGNUM){
+                error(peek(),"Can't have more than "+std::to_string(MAX_ARGNUM)+"argumments");
+            }
+            std::unique_ptr<Expr> expr=make_unique<Expr>(expression());
+            arguments.push_back(std::move(expr));
+        }while(match(COMMA));
     }
+    Token paren=consume(RIGHT_PAREN,"Expect ')' after arguments.");
+    return make_unique<Call>(callee,paren,std::move(arguments));
 }
 
 std::unique_ptr<Expr> Parser::tenary(){
