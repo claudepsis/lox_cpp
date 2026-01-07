@@ -25,6 +25,7 @@ class Parser{
     std::unique_ptr<Expr> logicOr();
     std::unique_ptr<Expr> logicAnd();
     std::unique_ptr<Stmt> statement();
+    std::unique_ptr<Stmt> function(std::string kind);
     std::unique_ptr<Stmt> printStmt();
     std::unique_ptr<Stmt> ifStmt();
     std::unique_ptr<Stmt> exprStmt();
@@ -55,7 +56,7 @@ class Parser{
         public:
             explicit ParseError(const std::string&message):std::runtime_error(message){}
     };
-    std::unique_ptr<Expr> finishCall(const Expr&expr);
+    std::unique_ptr<Expr> finishCall(std::unique_ptr<Expr>expr);
     public:
     std::vector<std::unique_ptr<Stmt>> parse();
     Parser(std::vector<Token> tokens):tokens(tokens){}

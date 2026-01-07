@@ -21,6 +21,8 @@ add_executable(lox
     src/Parser.cpp
     src/Interpreter.cpp
     src/Environment.cpp
+    src/LoxCallable.cpp
+    src/LoxFunction.cpp
 )
 
 add_executable(generate_ast

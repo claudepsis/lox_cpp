@@ -5,6 +5,7 @@
 #include "Token.h"
 typedef std::any Object;
 class Expression;
+class Function;
 class If;
 class Print;
 class Var;
@@ -16,6 +17,7 @@ class Visitor{
 public:
 	virtual ~Visitor()=default;
 	virtual std::any visitExpressionStmt(Expression& stmt)=0;
+	virtual std::any visitFunctionStmt(Function& stmt)=0;
 	virtual std::any visitIfStmt(If& stmt)=0;
 	virtual std::any visitPrintStmt(Print& stmt)=0;
 	virtual std::any visitVarStmt(Var& stmt)=0;
@@ -35,6 +37,19 @@ public:
         : expression(std::move(expression)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitExpressionStmt(*this);
+	}
+};
+
+class Function : public Stmt {
+public:
+    Token name;
+    std::vector<Token> params;
+    std::vector<std::shared_ptr<Stmt>> body;
+
+    Function(Token name,std::vector<Token> params,std::vector<std::shared_ptr<Stmt>> body)
+        : name(std::move(name)), params(std::move(params)), body(std::move(body)) {}
+	std::any accept(Visitor& visitor){
+		return visitor.visitFunctionStmt(*this);
 	}
 };
 

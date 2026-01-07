@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iomanip>
 #include "LoxCallable.h"
+#include "LoxFunction.h"
 
 std::any Interpreter::visitLiteralExpr(Literal &expr)
 {
@@ -81,10 +82,16 @@ std::any Interpreter::visitBlockStmt(Block& stmt){
     return std::any();
 }
 
+std::any Interpreter::visitFunctionStmt(Function &stmt){
+    auto function = std::make_shared<LoxFunction>(stmt);
+    environment->define(stmt.name.lexeme, function); 
+    return std::any();
+}
+
 void Interpreter::executeBlock(const std::vector<std::shared_ptr<Stmt>>& statements,
                      std::shared_ptr<Environment> blockEnvironment) {
         // ✅ 保存当前环境
-        std::shared_ptr<Environment> previous = this->environment;
+        std::shared_ptr<Environment> previous = environment;
         
         // ✅ 使用 RAII 保证恢复
         struct EnvironmentGuard {
@@ -247,7 +254,13 @@ void Interpreter::execute(Stmt &stmt)
     stmt.accept(*this);
 }
 
+
 std::any Interpreter::evaluate(std::unique_ptr<Expr> &expr)
+{
+    return expr->accept(*this);
+}
+
+std::any Interpreter::evaluate(std::shared_ptr<Expr> &expr)
 {
     return expr->accept(*this);
 }

@@ -28,17 +28,20 @@ public:
     std::any visitVarStmt(Var &stmt) override;
     std::any visitBlockStmt(Block& stmt) override;
     std::any visitWhileStmt(While& stmt) override;
+    std::any visitFunctionStmt(Function& stmt)override;
     // 解释执行
     void interpret(std::vector<std::unique_ptr<Stmt>>& statements);
-
     Interpreter();
-    
-private:
     std::shared_ptr<Environment> globals=std::make_shared<Environment>(Environment());
-    std::shared_ptr<Environment> environment=globals;
+    std::shared_ptr<Environment> environment=globals; 
+    void executeBlock(const std::vector<std::shared_ptr<Stmt>>& statements,
+                     std::shared_ptr<Environment> blockEnvironment);
+private:
+
     void execute(Stmt& stmt);
     // 辅助方法
     std::any evaluate(std::unique_ptr<Expr> &expr);
+    std::any evaluate(std::shared_ptr<Expr> &expr);
     bool isEqual(Object& a, Object &b);
     std::string stringify(std::any object);
     bool isTruthy(const Object &object);
@@ -46,8 +49,7 @@ private:
     void checkNumberOperands(Token &op, Object &left, Object &right);
     std::string formatDouble(const double&num);
 
-    void executeBlock(const std::vector<std::shared_ptr<Stmt>>& statements,
-                     std::shared_ptr<Environment> blockEnvironment);
+
 };
 
 #endif // INTERPRETER_H

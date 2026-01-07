@@ -11,12 +11,12 @@ private:
 public:
     virtual ~LoxCallable()=default;
     virtual int arity() const=0;
-    virtual std::any call(Interpreter& Interpreter,const std::vector<std::any> &arguments)=0;
+    virtual std::any call(Interpreter& Interpreter,std::vector<std::any> &arguments)=0;
     virtual std::string toString() const =0;
 };
 
 
-auto createClockFunction();
+std::shared_ptr<LoxCallable>  createClockFunction();
 
 
 

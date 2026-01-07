@@ -1,6 +1,6 @@
 #include "Environment.h"
 
-void Environment::define(const std::string &name,std::any &value){
+void Environment::define(const std::string &name,std::any value){
     //values.insert_or_assign(name,value);
     values[name]=value;
 }

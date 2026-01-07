@@ -1,14 +1,12 @@
 #include "LoxCallable.h"
 #include <chrono>
 
-
-auto createClockFunction() {
-    // 定义一个实现 LoxCallable 的类
+std::shared_ptr<LoxCallable> createClockFunction() {
     class ClockCallable : public LoxCallable {
     public:
         int arity() const override { return 0; }
         std::any call(Interpreter& interpreter,
-                     const std::vector<std::any>& arguments) override {
+                     std::vector<std::any>& arguments) override {
             auto now = std::chrono::system_clock::now();
             auto duration = now.time_since_epoch();
             auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(duration).count();
@@ -20,4 +18,4 @@ auto createClockFunction() {
     };
     
     return std::make_shared<ClockCallable>();
-};
+}

@@ -273,6 +273,54 @@ src/Lox.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpnprinter.dir/build.make CMakeFiles/rpnprinter.dir/src/Lox.cpp.s
 .PHONY : src/Lox.cpp.s
 
+src/LoxCallable.o: src/LoxCallable.cpp.o
+.PHONY : src/LoxCallable.o
+
+# target to build an object file
+src/LoxCallable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/src/LoxCallable.cpp.o
+.PHONY : src/LoxCallable.cpp.o
+
+src/LoxCallable.i: src/LoxCallable.cpp.i
+.PHONY : src/LoxCallable.i
+
+# target to preprocess a source file
+src/LoxCallable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/src/LoxCallable.cpp.i
+.PHONY : src/LoxCallable.cpp.i
+
+src/LoxCallable.s: src/LoxCallable.cpp.s
+.PHONY : src/LoxCallable.s
+
+# target to generate assembly for a file
+src/LoxCallable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/src/LoxCallable.cpp.s
+.PHONY : src/LoxCallable.cpp.s
+
+src/LoxFunction.o: src/LoxFunction.cpp.o
+.PHONY : src/LoxFunction.o
+
+# target to build an object file
+src/LoxFunction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/src/LoxFunction.cpp.o
+.PHONY : src/LoxFunction.cpp.o
+
+src/LoxFunction.i: src/LoxFunction.cpp.i
+.PHONY : src/LoxFunction.i
+
+# target to preprocess a source file
+src/LoxFunction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/src/LoxFunction.cpp.i
+.PHONY : src/LoxFunction.cpp.i
+
+src/LoxFunction.s: src/LoxFunction.cpp.s
+.PHONY : src/LoxFunction.s
+
+# target to generate assembly for a file
+src/LoxFunction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lox.dir/build.make CMakeFiles/lox.dir/src/LoxFunction.cpp.s
+.PHONY : src/LoxFunction.cpp.s
+
 src/Parser.o: src/Parser.cpp.o
 .PHONY : src/Parser.o
 
@@ -429,6 +477,12 @@ help:
 	@echo "... src/Lox.o"
 	@echo "... src/Lox.i"
 	@echo "... src/Lox.s"
+	@echo "... src/LoxCallable.o"
+	@echo "... src/LoxCallable.i"
+	@echo "... src/LoxCallable.s"
+	@echo "... src/LoxFunction.o"
+	@echo "... src/LoxFunction.i"
+	@echo "... src/LoxFunction.s"
 	@echo "... src/Parser.o"
 	@echo "... src/Parser.i"
 	@echo "... src/Parser.s"
