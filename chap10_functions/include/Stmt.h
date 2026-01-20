@@ -8,6 +8,7 @@ class Expression;
 class Function;
 class If;
 class Print;
+class Return;
 class Var;
 class Block;
 class While;
@@ -20,6 +21,7 @@ public:
 	virtual std::any visitFunctionStmt(Function& stmt)=0;
 	virtual std::any visitIfStmt(If& stmt)=0;
 	virtual std::any visitPrintStmt(Print& stmt)=0;
+	virtual std::any visitReturnStmt(Return& stmt)=0;
 	virtual std::any visitVarStmt(Var& stmt)=0;
 	virtual std::any visitBlockStmt(Block& stmt)=0;
 	virtual std::any visitWhileStmt(While& stmt)=0;
@@ -74,6 +76,18 @@ public:
         : expression(std::move(expression)) {}
 	std::any accept(Visitor& visitor){
 		return visitor.visitPrintStmt(*this);
+	}
+};
+
+class Return : public Stmt {
+public:
+    Token keyword;
+    std::unique_ptr<Expr> value;
+
+    Return(Token keyword,std::unique_ptr<Expr> value)
+        : keyword(std::move(keyword)), value(std::move(value)) {}
+	std::any accept(Visitor& visitor){
+		return visitor.visitReturnStmt(*this);
 	}
 };
 

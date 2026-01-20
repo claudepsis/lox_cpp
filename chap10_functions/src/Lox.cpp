@@ -56,8 +56,11 @@ void Lox::error(Token token,const std::string&mesage){
 
 void Lox::report(int line,const std::string& where,const std::string& message){
     std::cerr<<"[line "<<line<<"] Error"<<where<<": "<<message<<std::endl;
+    // std::cerr<<"["<<line<<"] Error"<<where<<": "<<message<<std::endl;
     hadError=true;
 }
+
+
 
 int main(int argc,char *argv[]){
     if(argc>2){

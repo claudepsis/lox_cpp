@@ -193,6 +193,7 @@ int main(int argc,char*argv[]){
         "Function   : Token name,vector<Token> params,vector<shared_ptr<Stmt>> body",
         "If : Expr condition,unique_ptr<Stmt> thenBranch,unique_ptr<Stmt> elseBranch",
         "Print  : Expr expression",
+        "Return : Token keyword, Expr value",
         "Var    : Token name,Expr initializer",
         "Block  : vector<shared_ptr<Stmt>> statements",
         "While  :  Expr condition, unique_ptr<Stmt> body"

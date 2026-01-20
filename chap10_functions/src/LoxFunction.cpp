@@ -1,13 +1,19 @@
 #include "LoxFunction.h"
-
+#include "ReturnVal.h"
 
 
 std::any LoxFunction::call(Interpreter &interpreter,std::vector<std::any>&arguments){
-    Environment enviornment=Environment(interpreter.globals);
+    //must bn
+    std::shared_ptr<Environment> enviornment=std::make_shared<Environment>(closure); 
     for(int i=0;i<arguments.size();i++){
-        enviornment.define(declaration.params[i].lexeme,arguments[i]);
+        enviornment->define(declaration.params[i].lexeme,arguments[i]);
     }
-    interpreter.executeBlock(declaration.body,std::make_shared<Environment>(enviornment));
+    try{
+        interpreter.executeBlock(declaration.body,enviornment);
+    }catch(ReturnVal returnval){
+        return returnval.value;
+    }
+    
     return std::any();
 }
 

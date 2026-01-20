@@ -25,7 +25,7 @@ add_executable(lox
     src/LoxFunction.cpp
 )
 
-add_executable(generate_ast
+add_executable(gen_ast
     tool/GenerateAst.cpp
 )
 

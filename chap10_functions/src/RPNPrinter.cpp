@@ -1,6 +1,7 @@
 #include "RPNPrinter.h"
 #include "TokenType.h"
 #include <iostream>
+#include "LoxFunction.h"
 using namespace std;
 string RPNPrinter::print(Expr &expr) {
     return std::any_cast<string>(expr.accept(*this));
@@ -62,7 +63,8 @@ std::string RPNPrinter::stringify(const std::any& value) {
     try {
         return std::any_cast<bool>(value) ? "true" : "false";
     } catch (const std::bad_any_cast&) {}
-    
+
+
     return "unknown";
 }
 

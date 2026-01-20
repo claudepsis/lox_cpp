@@ -5,6 +5,7 @@
 #include <iomanip>
 #include "LoxCallable.h"
 #include "LoxFunction.h"
+#include "ReturnVal.h"
 
 std::any Interpreter::visitLiteralExpr(Literal &expr)
 {
@@ -22,15 +23,28 @@ Interpreter::Interpreter(){
 }
 
 std::any Interpreter::visitCallExpr(Call& expr){
-    std::any callee=evaluate(expr.callee);
+    std::any callee = evaluate(expr.callee);
     std::vector<std::any> arguments;
-    for(int i=0;i<expr.arguments.size();i++){
-        arguments.push_back(evaluate(expr.arguments[i]));
+    
+    for(auto& arg : expr.arguments){
+        arguments.push_back(evaluate(arg));
     }
-    if(callee.type()!=typeid(std::shared_ptr<LoxCallable>)){
-        throw  RuntimeError(expr.paren,"Can only call functions and classes.");
+    
+    std::shared_ptr<LoxCallable> function;
+    
+    // 尝试转换为各种可调用类型
+    if(callee.type() == typeid(std::shared_ptr<LoxFunction>)){
+        auto func = std::any_cast<std::shared_ptr<LoxFunction>>(callee);
+        function = std::static_pointer_cast<LoxCallable>(func);  // 使用 static_pointer_cast
     }
-    std::shared_ptr<LoxCallable> function = std::any_cast<std::shared_ptr<LoxCallable>>(callee);
+    else if(callee.type() == typeid(std::shared_ptr<LoxCallable>)){
+        function = std::any_cast<std::shared_ptr<LoxCallable>>(callee);
+    }
+    else {
+        // std::cout << "Actual type: " << callee.type().name() << std::endl;
+        throw RuntimeError(expr.paren, "Can only call functions and classes.");
+    }
+    
     // 参数数量检查
     if (arguments.size() != function->arity()) {
         throw RuntimeError(expr.paren, 
@@ -38,9 +52,11 @@ std::any Interpreter::visitCallExpr(Call& expr){
                           " arguments but got " + 
                           std::to_string(arguments.size()) + ".");
     }
-    return function->call(*this,arguments);
-
+    
+    return function->call(*this, arguments);
 }
+
+
 
 std::any Interpreter::visitLogicalExpr(Logical& expr){
     std::any left=evaluate(expr.left);
@@ -83,9 +99,16 @@ std::any Interpreter::visitBlockStmt(Block& stmt){
 }
 
 std::any Interpreter::visitFunctionStmt(Function &stmt){
-    auto function = std::make_shared<LoxFunction>(stmt);
+    std::shared_ptr<LoxCallable> function = std::make_shared<LoxFunction>(stmt,environment);
     environment->define(stmt.name.lexeme, function); 
     return std::any();
+}
+
+
+std::any Interpreter::visitReturnStmt(Return &stmt){
+    std::any value;
+    if(stmt.value!=nullptr) value=evaluate(stmt.value);
+    throw ReturnVal(value);
 }
 
 void Interpreter::executeBlock(const std::vector<std::shared_ptr<Stmt>>& statements,
@@ -310,7 +333,8 @@ std::string Interpreter::stringify(std::any object)
 
     if (object.type() == typeid(bool))
         return std::any_cast<bool>(object) ? "true" : "false";
-
+    if(object.type()==typeid(std::shared_ptr<LoxCallable>))
+        return std::any_cast<std::shared_ptr<LoxCallable>>(object)->toString();
     return "unknown";
 }
 

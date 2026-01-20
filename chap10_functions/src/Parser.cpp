@@ -53,40 +53,42 @@ std::unique_ptr<Expr> Parser::call(){
     return std::move(expr);
 }
 
-std::unique_ptr<Expr> Parser::finishCall(std::unique_ptr<Expr>callee){
+std::unique_ptr<Expr> Parser::finishCall(std::unique_ptr<Expr> callee){
     std::vector<std::shared_ptr<Expr>> arguments;
     if(!check(RIGHT_PAREN)){
         do{
-            if(arguments.size()>MAX_ARGNUM){
-                error(peek(),"Can't have more than "+std::to_string(MAX_ARGNUM)+"argumments");
+            if(arguments.size() >= MAX_ARGNUM){
+                error(peek(), "Can't have more than " + std::to_string(MAX_ARGNUM) + " arguments.");
             }
-            arguments.push_back(std::move(expression()));
-        }while(match(COMMA));
+            // 关键修改：使用 assignment() 而不是 expression()
+            // 这样可以跳过逗号运算符的解析
+            arguments.push_back(std::move(assignment()));
+        } while(match(COMMA));
     }
-    Token paren=consume(RIGHT_PAREN,"Expect ')' after arguments.");
-    return make_unique<Call>(std::move(callee),paren,arguments);
+    Token paren = consume(RIGHT_PAREN, "Expect ')' after arguments.");
+    return make_unique<Call>(std::move(callee), paren, arguments);
 }
 
 std::unique_ptr<Expr> Parser::tenary(){
-    unique_ptr<Expr> expr=logicOr();
+    unique_ptr<Expr> expr = assignment();  // 改为 assignment
     if(match(QUESTION)){
-        unique_ptr<Expr> thenBranch=expression();
-        consume(COLON,"expect : in tenary expression.");
-        unique_ptr<Expr> elseBranch=tenary();
-        expr=make_unique<Tenary>(std::move(expr),std::move(thenBranch),std::move(elseBranch)); 
+        unique_ptr<Expr> thenBranch = assignment();  // 改为 assignment
+        consume(COLON, "expect : in tenary expression.");
+        unique_ptr<Expr> elseBranch = tenary();
+        expr = make_unique<Tenary>(std::move(expr), std::move(thenBranch), std::move(elseBranch)); 
     }
     return expr;
 }
 
 std::unique_ptr<Expr> Parser::assignment(){
-    unique_ptr<Expr> expr=equality();
+    unique_ptr<Expr> expr = logicOr();  // 改为 logicOr
     if(match(EQUAL)){
-        Token equals=previous();
-        unique_ptr<Expr> value=assignment();
-        if(auto var=dynamic_cast<Variable*>(expr.get())){
-            return make_unique<Assign>(var->name,std::move(value));
+        Token equals = previous();
+        unique_ptr<Expr> value = assignment();
+        if(auto var = dynamic_cast<Variable*>(expr.get())){
+            return make_unique<Assign>(var->name, std::move(value));
         }
-        Lox::error(equals,"Invalid assignment target.");
+        Lox::error(equals, "Invalid assignment target.");
     }
     return expr;
 }
@@ -176,6 +178,7 @@ std::unique_ptr<Stmt> Parser::statement(){
     if(match(PRINT)) return printStmt();
     if(match(IF)) return ifStmt();
     if(match(FOR)) return forStmt();
+    if(match(RETURN)) return returnStmt();
     if(match(WHILE)) return whileStmt();
     if(match(LEFT_BRACE)) return make_unique<Block>(block());
     else return exprStmt();
@@ -243,6 +246,16 @@ std::unique_ptr<Stmt> Parser::printStmt(){
     return make_unique<Print>(std::move(value));
 }
 
+std::unique_ptr<Stmt> Parser::returnStmt(){
+    Token keyword=previous();
+    std::unique_ptr<Expr>value=nullptr;
+    if(!check(SEMICOLON)){
+        value=expression();
+    }
+    consume(SEMICOLON,"Expect ';' after return value.");
+    return make_unique<Return>(keyword,std::move(value));
+}
+
 std::unique_ptr<Stmt> Parser::ifStmt(){
     consume(LEFT_PAREN,"Expect '(' after 'if'.");
     std::unique_ptr<Expr> condition=expression();
@@ -276,11 +289,11 @@ std::unique_ptr<Expr> Parser::logicOr(){
 }
 
 std::unique_ptr<Expr> Parser::logicAnd(){
-    std::unique_ptr<Expr> expr=assignment();
+    std::unique_ptr<Expr> expr = equality();  // 改为 equality
     while(match(AND)){
-        Token op=previous();
-        std::unique_ptr<Expr> right=assignment();
-        expr=make_unique<Logical>(std::move(expr),op,std::move(right));
+        Token op = previous();
+        unique_ptr<Expr> right = equality();  // 改为 equality
+        expr = make_unique<Logical>(std::move(expr), op, std::move(right));
     }
     return expr;
 }
@@ -306,18 +319,18 @@ std::unique_ptr<Stmt> Parser::function(std::string kind){
     Token name=consume(IDENTIFIER,"Expect "+kind+" name.");
     consume(LEFT_PAREN, "Expect '(' after " + kind + " name.");
     vector<Token> parameters;
-    if(check(RIGHT_PAREN)){
+    if(!check(RIGHT_PAREN)){
         do{
-            if(parameters.size()>MAX_ARGNUM){
+            if(parameters.size()>=MAX_ARGNUM){
                 error(peek(),"Can't have more than 255 parameters.");
             }
             parameters.push_back(consume(IDENTIFIER,"Expect parameter name."));
         }while(match(COMMA));
-        consume(RIGHT_PAREN,"Expect ')' after parameters.");
-        consume(LEFT_BRACE,"Expect '{' before " + kind + " body.");
-        std::vector<std::shared_ptr<Stmt>> body=block();
-        return make_unique<Function>(std::move(name),std::move(parameters),std::move(body));
     }
+    consume(RIGHT_PAREN,"Expect ')' after parameters.");
+    consume(LEFT_BRACE,"Expect '{' before " + kind + " body.");
+    std::vector<std::shared_ptr<Stmt>> body=block();
+    return make_unique<Function>(std::move(name),std::move(parameters),std::move(body)); 
 }
 
 std::vector<std::unique_ptr<Stmt>> Parser::parse(){

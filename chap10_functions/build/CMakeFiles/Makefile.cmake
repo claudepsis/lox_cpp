@@ -44,7 +44,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/lox.dir/DependInfo.cmake"
-  "CMakeFiles/generate_ast.dir/DependInfo.cmake"
+  "CMakeFiles/gen_ast.dir/DependInfo.cmake"
   "CMakeFiles/astprinter.dir/DependInfo.cmake"
   "CMakeFiles/rpnprinter.dir/DependInfo.cmake"
   )

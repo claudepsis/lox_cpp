@@ -792,7 +792,8 @@ CMakeFiles/lox.dir/src/Interpreter.cpp.o: ../src/Interpreter.cpp \
   ../include/Interpreter.h \
   ../include/LoxCallable.h \
   ../include/LoxFunction.h \
-  ../include/LoxCallable.h
+  ../include/LoxCallable.h \
+  ../include/ReturnVal.h
 
 CMakeFiles/lox.dir/src/Lox.cpp.o: ../src/Lox.cpp \
   /usr/include/stdc-predef.h \
@@ -1609,7 +1610,8 @@ CMakeFiles/lox.dir/src/LoxFunction.cpp.o: ../src/LoxFunction.cpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
-  /usr/include/c++/11/bits/stl_multimap.h
+  /usr/include/c++/11/bits/stl_multimap.h \
+  ../include/ReturnVal.h
 
 CMakeFiles/lox.dir/src/Parser.cpp.o: ../src/Parser.cpp \
   /usr/include/stdc-predef.h \
@@ -2413,6 +2415,8 @@ CMakeFiles/lox.dir/src/Token.cpp.o: ../src/Token.cpp \
 ../include/Scanner.h:
 
 ../src/Lox.cpp:
+
+../include/ReturnVal.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 

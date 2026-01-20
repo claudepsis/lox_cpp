@@ -130,17 +130,17 @@ lox/fast:
 .PHONY : lox/fast
 
 #=============================================================================
-# Target rules for targets named generate_ast
+# Target rules for targets named gen_ast
 
 # Build rule for target.
-generate_ast: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 generate_ast
-.PHONY : generate_ast
+gen_ast: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gen_ast
+.PHONY : gen_ast
 
 # fast build rule for target.
-generate_ast/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generate_ast.dir/build.make CMakeFiles/generate_ast.dir/build
-.PHONY : generate_ast/fast
+gen_ast/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_ast.dir/build.make CMakeFiles/gen_ast.dir/build
+.PHONY : gen_ast/fast
 
 #=============================================================================
 # Target rules for targets named astprinter
@@ -434,7 +434,7 @@ tool/GenerateAst.o: tool/GenerateAst.cpp.o
 
 # target to build an object file
 tool/GenerateAst.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generate_ast.dir/build.make CMakeFiles/generate_ast.dir/tool/GenerateAst.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_ast.dir/build.make CMakeFiles/gen_ast.dir/tool/GenerateAst.cpp.o
 .PHONY : tool/GenerateAst.cpp.o
 
 tool/GenerateAst.i: tool/GenerateAst.cpp.i
@@ -442,7 +442,7 @@ tool/GenerateAst.i: tool/GenerateAst.cpp.i
 
 # target to preprocess a source file
 tool/GenerateAst.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generate_ast.dir/build.make CMakeFiles/generate_ast.dir/tool/GenerateAst.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_ast.dir/build.make CMakeFiles/gen_ast.dir/tool/GenerateAst.cpp.i
 .PHONY : tool/GenerateAst.cpp.i
 
 tool/GenerateAst.s: tool/GenerateAst.cpp.s
@@ -450,7 +450,7 @@ tool/GenerateAst.s: tool/GenerateAst.cpp.s
 
 # target to generate assembly for a file
 tool/GenerateAst.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generate_ast.dir/build.make CMakeFiles/generate_ast.dir/tool/GenerateAst.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_ast.dir/build.make CMakeFiles/gen_ast.dir/tool/GenerateAst.cpp.s
 .PHONY : tool/GenerateAst.cpp.s
 
 # Help Target
@@ -462,7 +462,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... astprinter"
-	@echo "... generate_ast"
+	@echo "... gen_ast"
 	@echo "... lox"
 	@echo "... rpnprinter"
 	@echo "... src/AstPrinter.o"

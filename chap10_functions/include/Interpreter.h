@@ -29,6 +29,7 @@ public:
     std::any visitBlockStmt(Block& stmt) override;
     std::any visitWhileStmt(While& stmt) override;
     std::any visitFunctionStmt(Function& stmt)override;
+    std::any visitReturnStmt(Return &stmt) override;
     // 解释执行
     void interpret(std::vector<std::unique_ptr<Stmt>>& statements);
     Interpreter();

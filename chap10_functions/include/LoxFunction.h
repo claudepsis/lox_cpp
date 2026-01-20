@@ -4,10 +4,11 @@
 #include <any>
 #include "Interpreter.h"
 #include <memory>
-class LoxFunction:LoxCallable{
+class LoxFunction:public LoxCallable{
     public:
     Function declaration;
-    LoxFunction(Function &declaration):declaration(declaration){};
+    std::shared_ptr<Environment> closure;
+    LoxFunction(Function &declaration,std::shared_ptr<Environment> closure):declaration(declaration),closure(closure){};
 
     std::any call(Interpreter &interpreter,std::vector<std::any>&arguments) override;
     int arity() const override;

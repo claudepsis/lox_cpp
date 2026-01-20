@@ -27,6 +27,7 @@ class Parser{
     std::unique_ptr<Stmt> statement();
     std::unique_ptr<Stmt> function(std::string kind);
     std::unique_ptr<Stmt> printStmt();
+    std::unique_ptr<Stmt> returnStmt();
     std::unique_ptr<Stmt> ifStmt();
     std::unique_ptr<Stmt> exprStmt();
     std::unique_ptr<Stmt> delcaration();
