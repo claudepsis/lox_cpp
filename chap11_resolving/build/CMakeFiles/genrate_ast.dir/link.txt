@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -O0 CMakeFiles/genrate_ast.dir/tool/GenerateAst.cpp.o -o genrate_ast 

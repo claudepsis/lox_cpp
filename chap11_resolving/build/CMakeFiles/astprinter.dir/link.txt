@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -O0 CMakeFiles/astprinter.dir/src/Lox.cpp.o CMakeFiles/astprinter.dir/src/Scanner.cpp.o CMakeFiles/astprinter.dir/src/Token.cpp.o CMakeFiles/astprinter.dir/src/AstPrinter.cpp.o -o astprinter 

@@ -1,2 +1,11 @@
-fun foo() {}
-print foo; // expect: <fn foo>
+var a=1;
+{
+    fun foo() {
+        a=a+1;
+    }
+    foo();
+    print a;
+    var a=10;
+    foo();
+    print a;
+}
